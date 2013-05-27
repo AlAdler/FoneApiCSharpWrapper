@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83D5417D-DC32-485E-B64D-0935BCD42604}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FoneApiWrapper</RootNamespace>
+    <AssemblyName>FoneApiWrapper</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.0.8.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\Alain\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=101.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\Alain\twilio-twilio-csharp-3.1.4-0-g8c3a5f1\twilio-twilio-csharp-8c3a5f1\src\Twilio.Api\bin\Debug\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CallBacks\Actions\Action.cs" />
+    <Compile Include="CallBacks\Actions\AnswerAction.cs" />
+    <Compile Include="CallBacks\Actions\BridgeToAction.cs" />
+    <Compile Include="CallBacks\Actions\ConferenceAction.cs" />
+    <Compile Include="CallBacks\Actions\DialAction.cs" />
+    <Compile Include="CallBacks\Actions\eLanguage.cs" />
+    <Compile Include="CallBacks\Actions\eVoice.cs" />
+    <Compile Include="CallBacks\Actions\FlushDtmfBufferAction.cs" />
+    <Compile Include="CallBacks\Actions\GetConferenceCountAction.cs" />
+    <Compile Include="CallBacks\Actions\GetDtmfAction.cs" />
+    <Compile Include="CallBacks\Actions\HangupAction.cs" />
+    <Compile Include="CallBacks\Actions\InstantRecordAction.cs" />
+    <Compile Include="CallBacks\Actions\PlayAndGetDtmfAction.cs" />
+    <Compile Include="CallBacks\Actions\PlayFileAction.cs" />
+    <Compile Include="CallBacks\Actions\RecordStartAction.cs" />
+    <Compile Include="CallBacks\Actions\RecordStopAction.cs" />
+    <Compile Include="CallBacks\Actions\RedirectAction.cs" />
+    <Compile Include="CallBacks\Actions\SayAction.cs" />
+    <Compile Include="CallBacks\Actions\SayDigitsAction.cs" />
+    <Compile Include="CallBacks\Actions\SayNumberAction.cs" />
+    <Compile Include="CallBacks\Actions\SendDtmfAction.cs" />
+    <Compile Include="CallBacks\Actions\SleepAction.cs" />
+    <Compile Include="CallBacks\CallBackResponse.cs" />
+    <Compile Include="CallBacks\Constants.cs" />
+    <Compile Include="CallBacks\Settings\SetBillingCodeSetting.cs" />
+    <Compile Include="CallBacks\Settings\SetErrorReportUrlSetting.cs" />
+    <Compile Include="CallBacks\Settings\SetLimitCallDurationSetting.cs" />
+    <Compile Include="CallBacks\Settings\Setting.cs" />
+    <Compile Include="Commands\CommandResponse.cs" />
+    <Compile Include="Commands\eDialDestinationType.cs" />
+    <Compile Include="Commands\FoneApiClient.cs" />
+    <Compile Include="CustomParam.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
