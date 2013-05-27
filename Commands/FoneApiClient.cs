@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
+using System.Net;
 
 namespace FoneApiWrapper.Commands
 {
@@ -102,20 +103,20 @@ namespace FoneApiWrapper.Commands
                 }
                 else
                 {
-                    //LogUtils.MyHandle.WriteToLog("Http Web Exception in FoneApiWrapper.Commands.FoneApiClient.Dial. HttpStatusCode = {0}. Content = {1}", response.StatusCode, response.Content);
+                    //TODO: Add Log entry
                     retVal = new CommandResponse();
                     retVal.callId = null;
                     retVal.errorMsg = response.Content;
-                    retVal.status = -1;
+                    retVal.status = -10;
                 }
             }
-            catch (Exception exc)
+            catch (WebException exc)
             {
-                //LogUtils.MyHandle.WriteToLog("Exception in FoneApiWrapper.Commands.FoneApiClient.Dial.");
+                //TODO: Add Log entry
                 retVal = new CommandResponse();
                 retVal.callId = null;
                 retVal.errorMsg = exc.Message;
-                retVal.status = -2;
+                retVal.status = -20;
             }
             return retVal;
         }
@@ -135,19 +136,19 @@ namespace FoneApiWrapper.Commands
                 }
                 else
                 {
-                    //LogUtils.MyHandle.WriteToLog("Http Web Exception in FoneApiWrapper.Commands.FoneApiClient.HangUp. HttpStatusCode = {0}. Content = {1}. callId = {2}", response.StatusCode, response.Content, callId);
+                    //TODO: Add Log entry
                     retVal = new CommandResponse();
                     retVal.callId = callId;
-                    retVal.status = -1;
+                    retVal.status = -10;
                     retVal.errorMsg = response.Content;
                 }
             }
-            catch (Exception exc)
+            catch (WebException exc)
             {
-                //LogUtils.MyHandle.HandleException(exc, "Exception in FoneApiWrapper.Commands.FoneApiClient.HangUp. callId = {0}", callId);
+                //TODO: Add Log entry
                 retVal = new CommandResponse();
                 retVal.callId = callId;
-                retVal.status = -2;
+                retVal.status = -20;
                 retVal.errorMsg = exc.Message;
             }
             return retVal;
